@@ -1,0 +1,753 @@
+/* ============================================
+   WEREWOLF DUEL – Feuille de style principale
+   ============================================ */
+
+:root {
+    --red:        #b30000;
+    --red-dark:   #8f0000;
+    --red-hover:  #cc0000;
+    --black:      #0d0d0d;
+    --dark:       #1a1a1a;
+    --mid:        #2a2a2a;
+    --light-bg:   #f9f7f4;
+    --white:      #ffffff;
+    --text-dark:  #111111;
+    --text-grey:  #666666;
+    --border:     #e0dcd8;
+    --gold:       #c8a45a;
+    --max-width:  1100px;
+    --radius:     8px;
+    --transition: 0.28s ease;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    transition: background var(--transition), box-shadow var(--transition);
+}
+
+.navbar.scrolled {
+    background: rgba(13, 13, 13, 0.96);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.nav-inner {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-family: "Cinzel", serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+.nav-btn {
+    background: var(--red) !important;
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: var(--radius);
+    font-weight: 600 !important;
+    transition: background var(--transition) !important;
+}
+
+.nav-btn:hover {
+    background: var(--red-hover) !important;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: url("../images/hero.jpg") center/cover no-repeat, var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.7) 50%,
+        rgba(0,0,0,0.85) 100%
+    );
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 40px 24px;
+}
+
+.hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 20px;
+}
+
+.hero h1 {
+    font-family: "Cinzel", serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: var(--white);
+    line-height: 1.05;
+    margin: 0 0 8px;
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: var(--red);
+    display: block;
+}
+
+.hero-sub {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255,255,255,0.8);
+    margin: 16px 0 40px;
+    line-height: 1.6;
+}
+
+.btn-hero {
+    font-size: 1.05rem;
+    padding: 16px 40px;
+    letter-spacing: 0.5px;
+}
+
+.hero-scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.hero-scroll-hint span {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    transform: rotate(45deg);
+    margin: -12px auto 0;
+    animation: bounce 1.4s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.5; }
+    50% { transform: rotate(45deg) translateY(6px); opacity: 1; }
+}
+
+/* ============================================
+   BOUTONS
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius);
+    transition: background var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+    background: var(--red-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.btn-outline:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+section {
+    padding: 96px 24px;
+}
+
+.section-light {
+    background: var(--light-bg);
+}
+
+.section-dark {
+    background: var(--dark);
+    color: var(--white);
+}
+
+.section-inner {
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+/* TITRES */
+
+h2 {
+    font-family: "Cinzel", serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin: 0 0 56px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--red);
+    margin: 18px auto 0;
+    border-radius: 2px;
+}
+
+.section-dark h2 {
+    color: var(--white);
+}
+
+/* ============================================
+   GALERIE
+   ============================================ */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.gallery-item {
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--border);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.img-placeholder {
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8e4e0;
+    color: var(--text-grey);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* ============================================
+   CARROUSEL CARTES
+   ============================================ */
+
+.cards-carousel {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.carousel-track-wrapper {
+    flex: 1;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-slide {
+    flex: 0 0 calc(25% - 18px);
+    text-align: center;
+}
+
+.card-slide img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-slide:hover img {
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
+
+.card-label {
+    margin: 12px 0 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.carousel-btn {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.carousel-dot.active {
+    background: var(--red);
+    transform: scale(1.3);
+}
+
+@media (max-width: 900px) {
+    .card-slide {
+        flex: 0 0 calc(50% - 12px);
+    }
+}
+
+@media (max-width: 560px) {
+    .card-slide {
+        flex: 0 0 calc(80% - 12px);
+    }
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
+    }
+}
+
+/* ============================================
+   VIDÉO
+   ============================================ */
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-placeholder {
+    padding-bottom: 0;
+    height: 320px;
+    background: var(--mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.video-coming-soon {
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+}
+
+.video-coming-soon svg {
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.video-coming-soon p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* ============================================
+   RÈGLES & FAQ
+   ============================================ */
+
+.rules-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 64px;
+}
+
+.rules-images img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.faq h3 {
+    font-family: "Cinzel", serif;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 32px;
+    color: var(--text-dark);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-of-type {
+    border-top: 1px solid var(--border);
+}
+
+.faq-item summary {
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--red);
+    flex-shrink: 0;
+    line-height: 1;
+    transition: transform var(--transition);
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    margin: 0 0 20px;
+    color: var(--text-grey);
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   BOUTIQUES
+   ============================================ */
+
+.shop-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 48px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.shop-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    color: var(--white);
+    text-decoration: none;
+    transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.shop-card:hover {
+    background: rgba(179,0,0,0.15);
+    border-color: var(--red);
+    transform: translateY(-2px);
+}
+
+.shop-card--featured {
+    border-color: var(--red);
+    background: rgba(179,0,0,0.1);
+}
+
+.shop-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.shop-info {
+    flex: 1;
+}
+
+.shop-info strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.shop-info small {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+}
+
+.shop-arrow {
+    font-size: 1.1rem;
+    color: var(--red);
+    flex-shrink: 0;
+}
+
+.reseller-block {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 48px;
+    max-width: 640px;
+    margin: auto;
+}
+
+.reseller-block p {
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background: var(--black);
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+.footer-logo {
+    font-family: "Cinzel", serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin: 0 0 16px;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    margin: 0 0 16px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-copy {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.82rem;
+    margin: 0;
+}
+
+/* ============================================
+   ANIMATION AU SCROLL
+   ============================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    section {
+        padding: 72px 20px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(13,13,13,0.97);
+        padding: 24px;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .rules-images {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img,
+    .img-placeholder {
+        height: 240px;
+    }
+
+    .video-placeholder {
+        height: 220px;
+    }
+}

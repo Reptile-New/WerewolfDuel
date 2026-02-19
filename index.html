@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>WereWolf DUEL – Jeu de cartes</title>
+    <meta name="description" content="WereWolf DUEL, jeu de cartes de bluff et de déduction pour deux joueurs.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">WereWolf DUEL</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#gallery">Le jeu</a></li>
+            <li><a href="#cards">Les cartes</a></li>
+            <li><a href="#video">Vidéo</a></li>
+            <li><a href="#rules">Règles</a></li>
+            <li><a href="#shops">Boutiques</a></li>
+            <li><a href="https://labulle-edition.sumupstore.com/article/werewolf-duel" class="nav-btn" target="_blank" rel="noopener">Acheter</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-overlay">
+        <p class="hero-eyebrow">Jeu de cartes · 2 joueurs · 10 min</p>
+        <h1>WereWolf<br><span>DUEL</span></h1>
+        <p class="hero-sub">Bluff, déduction et tactique.<br>Qui est le loup-garou ?</p>
+        <a href="https://labulle-edition.sumupstore.com/article/werewolf-duel" class="btn btn-hero" target="_blank" rel="noopener">Acheter le jeu</a>
+    </div>
+    <div class="hero-scroll-hint">
+        <span></span>
+    </div>
+</header>
+
+<!-- GALERIE -->
+<section id="gallery" class="section-light reveal">
+    <div class="section-inner">
+        <h2>Le jeu</h2>
+        <div class="gallery">
+            <figure class="gallery-item">
+                <img src="images/game3.jpg" alt="Partie en cours de WereWolf DUEL">
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/boite.png" alt="Boîte du jeu WereWolf DUEL">
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/boite.jpg" alt="WereWolf DUEL">
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- CARTES -->
+<section id="cards" class="section-dark reveal">
+    <div class="section-inner">
+        <h2>Les cartes</h2>
+        <div class="cards-carousel">
+            <button class="carousel-btn carousel-btn--prev" id="carouselPrev" aria-label="Précédent">&#8249;</button>
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="card-slide">
+                        <img src="images/cartes/carte_01.jpg" alt="Carte Humain">
+                        <p class="card-label">L'Humain</p>
+                    </div>
+                    <div class="card-slide">
+                        <img src="images/cartes/carte_02.jpg" alt="Carte Loup-garou">
+                        <p class="card-label">Le Loup-garou</p>
+                    </div>
+                    <div class="card-slide">
+                        <img src="images/cartes/carte_05.jpg" alt="Carte Torche">
+                        <p class="card-label">La Torche</p>
+                    </div>
+                    <div class="card-slide">
+                        <img src="images/cartes/carte_06.jpg" alt="Carte Attaque">
+                        <p class="card-label">L'Attaque</p>
+                    </div>
+                    <div class="card-slide">
+                        <img src="images/cartes/carte_07.jpg" alt="Carte Bouclier">
+                        <p class="card-label">Le Bouclier</p>
+                    </div>
+                    <div class="card-slide">
+                        <img src="images/cartes/carte_08.jpg" alt="Carte Duel">
+                        <p class="card-label">Le Duel</p>
+                    </div>
+                    <div class="card-slide">
+                        <img src="images/cartes/carte_11.jpg" alt="Carte Révélation">
+                        <p class="card-label">La Révélation</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn--next" id="carouselNext" aria-label="Suivant">&#8250;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+</section>
+
+<!-- VIDÉO -->
+<section id="video" class="section-dark reveal">
+    <div class="section-inner">
+        <h2>Vidéo de présentation</h2>
+        <div class="video-wrapper video-placeholder">
+            <div class="video-coming-soon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="64" height="64"><path d="M8 5v14l11-7z"/></svg>
+                <p>La vidéo des règles arrive bientôt</p>
+            </div>
+        </div>
+        <!-- Remplacer la div video-placeholder par :
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/VOTRE_ID"
+                    title="WereWolf DUEL – Règles"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+        -->
+    </div>
+</section>
+
+<!-- RÈGLES & FAQ -->
+<section id="rules" class="section-light reveal">
+    <div class="section-inner">
+        <h2>Règles &amp; FAQ</h2>
+
+        <div class="rules-images">
+            <img src="images/regles-1.webp" alt="Règles WereWolf DUEL page 1">
+            <img src="images/regles-2.webp" alt="Règles WereWolf DUEL page 2">
+        </div>
+
+        <div class="faq">
+            <h3>Questions fréquentes</h3>
+
+            <details class="faq-item">
+                <summary>Quelle est la durée d'une partie ?</summary>
+                <p>Environ 10 minutes.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Que faire en cas d'égalité ?</summary>
+                <p>Relancez de nouvelles manches jusqu'à départager les joueurs.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Avant de révéler les cartes actions, puis-je modifier ma carte ?</summary>
+                <p>Tant que le décompte n'est pas terminé et que personne n'a vu la carte action de son adversaire, vous pouvez modifier votre carte action — cela fait même partie du bluff.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Quelle dimension de protège-cartes utiliser ?</summary>
+                <p>Dans n'importe quelle boutique spécialisée, demandez la dimension <strong>STANDARD</strong> — la même que pour les cartes Magic ou Pokémon (63&nbsp;×&nbsp;88&nbsp;mm).</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- BOUTIQUES -->
+<section id="shops" class="section-dark reveal">
+    <div class="section-inner">
+        <h2>Où acheter ?</h2>
+
+        <ul class="shop-list">
+            <li>
+                <a href="https://labulle-edition.sumupstore.com/article/werewolf-duel" target="_blank" rel="noopener" class="shop-card shop-card--featured">
+                    <span class="shop-icon">🛒</span>
+                    <span class="shop-info">
+                        <strong>Notre Boutique en Ligne</strong>
+                        <small>Livraison partout en France</small>
+                    </span>
+                    <span class="shop-arrow">→</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://share.google/a0g1Jh8rcndnvqRFf" target="_blank" rel="noopener" class="shop-card">
+                    <span class="shop-icon">🃏</span>
+                    <span class="shop-info">
+                        <strong>Le Deck</strong>
+                        <small>91400 Orsay</small>
+                    </span>
+                    <span class="shop-arrow">→</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.parkage.com/fr/1118292-werewolf-duel" target="_blank" rel="noopener" class="shop-card">
+                    <span class="shop-icon">🃏</span>
+                    <span class="shop-info">
+                        <strong>Parkage Paris (EDB)</strong>
+                        <small>75005 Paris</small>
+                    </span>
+                    <span class="shop-arrow">→</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="reseller-block">
+            <p>Vous êtes revendeur et souhaitez proposer WereWolf DUEL ?</p>
+            <a href="mailto:labulleajeux@gmail.com?subject=Demande%20de%20revente%20WereWolf%20DUEL&body=Bonjour,%0A%0ANous%20souhaitons%20devenir%20revendeur%20du%20jeu%20WereWolf%20DUEL.%0A%0ANom%20de%20la%20boutique%20:%0AVille%20:%0ASite%20web%20:%0A%0ACordialement,"
+               class="btn btn-outline">
+                Devenez revendeur
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <p class="footer-logo">WereWolf DUEL</p>
+        <p class="footer-links">
+            <a href="https://labulle-edition.sumupstore.com/article/werewolf-duel" target="_blank" rel="noopener">Boutique</a>
+            &nbsp;·&nbsp;
+            <a href="mailto:labulleajeux@gmail.com">Contact</a>
+        </p>
+        <p class="footer-copy">© 2025 La Bulle Édition — WereWolf DUEL</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

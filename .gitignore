@@ -1,0 +1,12 @@
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# PDFs sources (trop lourds, pas utiles en prod)
+images/*.pdf
+images/cartes/*.pdf
+
+# Éditeurs
+.vscode/
+*.code-workspace
