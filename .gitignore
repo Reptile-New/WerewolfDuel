@@ -10,3 +10,6 @@ images/cartes/*.pdf
 # Éditeurs
 .vscode/
 *.code-workspace
+
+# Claude Code
+.claude/
